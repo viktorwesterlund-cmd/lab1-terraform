@@ -10,7 +10,7 @@ This project demonstrates basic DevSecOps practices, combining infrastructure au
 
 How to Run the Project
 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/lab1-terraform.git
+git clone https://github.com/viktorwesterlund-cmd/lab1-terraform.git
 cd lab1-terraform
 2. Initialize Terraform
 terraform init
@@ -110,7 +110,7 @@ Repository
 
 GitHub repository:
 
-https://github.com/YOUR_USERNAME/lab1-terraform
+https://github.com/viktorwesterlund-cmd/lab1-terraform
 
 Author
 
