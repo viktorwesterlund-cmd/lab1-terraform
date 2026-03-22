@@ -94,17 +94,39 @@ Reduces risk of vulnerabilities from outdated packages
 
 Backup Strategy
 
-A daily snapshot policy is configured using Terraform.
+This project implements a daily disk snapshot backup policy using Terraform and Google Cloud resource policies.
 
-Features:
+Configuration
+Frequency: Daily
+Start time: 03:00
+Retention period: 7 days
+Behavior on disk deletion: Snapshots are retained (KEEP_AUTO_SNAPSHOTS)
+Purpose
 
-Daily snapshots
+The backup policy ensures that the VM's disk is regularly backed up, enabling recovery in case of:
 
-Retention period of 7 days
+System failure
+Data corruption
+Accidental deletion
+Security incidents (e.g., compromise or ransomware)
+Implementation
 
-Snapshots preserved even if the original disk is deleted
+The backup is defined using:
 
-This ensures recoverability in case of system failure or accidental data loss.
+google_compute_resource_policy (snapshot schedule)
+google_compute_disk_resource_policy_attachment (attached to the VM disk)
+
+This follows best practices for automated and policy-driven backups in cloud environments.
+
+DevSecOps Perspective
+
+Including automated backups is a key part of DevSecOps:
+
+Improves resilience and disaster recovery
+Reduces manual intervention
+Ensures data protection compliance
+
+The backup policy is fully managed as code, making it version-controlled and reproducible.
 
 Repository
 
